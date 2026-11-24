@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Catálogo de uniformes y artículos SMN México. Consulta productos y realiza tu pedido por WhatsApp.">
+  <title>SMN México | Tienda</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="topbar">SMN MÉXICO · UNIFORMES Y ARTÍCULOS</div>
+  <header class="site-header">
+    <a class="brand" href="#"><span class="brand-mark">SMN</span><span><b>SMN MÉXICO</b><small>TIENDA EN LÍNEA</small></span></a>
+    <nav><a href="#catalogo">Catálogo</a><a href="#nosotros">Información</a><a href="#contacto">Contacto</a></nav>
+    <button class="cart-button" id="openCart" aria-label="Abrir carrito">Carrito <span id="cartCount">0</span></button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">CATÁLOGO DE PRODUCTOS</p>
+        <h1>Todo lo que necesitas,<br><em>en un solo lugar.</em></h1>
+        <p>Conoce nuestros artículos y uniformes. Agrega productos a tu carrito y envía tu solicitud de pedido por WhatsApp.</p>
+        <a class="primary-button" href="#catalogo">Ver productos</a>
+        <p class="notice">Tienda independiente. No es un sitio oficial de la Secretaría de la Defensa Nacional.</p>
+      </div>
+      <div class="hero-art">
+        <div class="hero-card"><span class="hero-monogram">SMN</span><b>SMN MÉXICO</b><small>CATÁLOGO</small></div>
+        <span class="hero-stamp">PEDIDOS<br>POR WHATSAPP</span>
+      </div>
+    </section>
+
+    <section class="benefits">
+      <div><strong>01</strong><span>Consulta el catálogo</span></div>
+      <div><strong>02</strong><span>Arma tu pedido</span></div>
+      <div><strong>03</strong><span>Confirma por WhatsApp</span></div>
+    </section>
+
+    <section class="section" id="catalogo">
+      <div class="section-heading"><div><p class="eyebrow">NUESTROS ARTÍCULOS</p><h2>Catálogo</h2></div><input id="searchInput" class="search" type="search" placeholder="Buscar producto…"></div>
+      <div class="filters" id="filters">
+        <button class="filter active" data-filter="Todos">Todos</button>
+        <button class="filter" data-filter="Ropa">Ropa</button>
+        <button class="filter" data-filter="Accesorios">Accesorios</button>
+      </div>
+      <div class="product-grid" id="productGrid"></div>
+      <p class="empty hidden" id="emptyState">No encontramos productos con esa búsqueda.</p>
+    </section>
+
+    <section class="about" id="nosotros">
+      <div><p class="eyebrow">SMN MÉXICO</p><h2>Atención directa y sencilla.</h2></div>
+      <p>Explora los artículos disponibles, revisa sus detalles y envía tu solicitud. Los precios, existencias, tallas y condiciones de entrega se confirman directamente por WhatsApp antes de cerrar la compra.</p>
+    </section>
+
+    <section class="contact" id="contacto">
+      <div><p class="eyebrow">¿TIENES DUDAS?</p><h2>Estamos para atenderte.</h2><p>Escríbenos para consultar disponibilidad, tallas y formas de entrega.</p></div>
+      <a class="whatsapp-button" id="contactWhatsApp" target="_blank" rel="noopener">Contactar por WhatsApp ↗</a>
+    </section>
+  </main>
+
+  <footer><b>SMN MÉXICO</b><span>© <span id="year"></span> · Catálogo independiente</span><small>Este comercio no representa ni está afiliado oficialmente a SEDENA o al Gobierno de México.</small></footer>
+
+  <div class="overlay hidden" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Carrito de compras" aria-hidden="true">
+    <div class="drawer-head"><div><p class="eyebrow">TU SELECCIÓN</p><h2>Mi carrito</h2></div><button class="close-button" id="closeCart" aria-label="Cerrar">×</button></div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-footer"><div class="total-line"><span>Total estimado</span><b id="cartTotal">$0.00</b></div><p>El precio y la disponibilidad se confirman por WhatsApp.</p><button class="primary-button full" id="checkoutButton">Enviar pedido por WhatsApp</button><button class="text-button" id="clearCart">Vaciar carrito</button></div>
+  </aside>
+
+  <script src="app.js"></script>
+</body>
+</html>
