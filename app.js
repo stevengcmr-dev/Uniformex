@@ -1,11 +1,11 @@
 const WHATSAPP_NUMBER="525662698251";
 const products=[
-{id:1,name:"Paquete básico",cat:"Paquetes",price:350,desc:"Gorra + playera SMN México + porta cartilla.",image:"assets/playera-modelo.jpg",tag:"PAQUETE"},
-{id:2,name:"Paquete completo",cat:"Paquetes",price:780,desc:"Cinturón + sudadera SMN México + gorra + playera SMN México + porta cartilla.",image:"assets/sudadera-producto.jpg",tag:"PAQUETE"},
-{id:3,name:"Playera SMN México",cat:"Playeras",price:299,desc:"Playera blanca con diseño SMN México.",image:"assets/playera-modelo.jpg"},
-{id:4,name:"Gorra",cat:"Gorras",price:120,desc:"Gorra roja. Consulta disponibilidad.",glyph:"GORRA"},
-{id:5,name:"Sudadera SMN México",cat:"Sudaderas",price:350,desc:"Sudadera blanca con diseño SMN México.",image:"assets/sudadera-modelo.jpg"},
-{id:6,name:"Cinturón",cat:"Cinturones",price:100,desc:"Cinturón. Consulta detalles y disponibilidad.",glyph:"CINTURÓN"},
+{id:1,name:"Paquete básico",cat:"Paquetes",price:350,desc:"Gorra + playera SMN México + porta cartilla.",image:"assets/paquete-basico.webp",tag:"PAQUETE"},
+{id:2,name:"Paquete completo",cat:"Paquetes",price:780,desc:"Cinturón + sudadera SMN México + gorra + playera SMN México + porta cartilla.",image:"assets/paquete-completo.webp",tag:"PAQUETE"},
+{id:3,name:"Playera SMN México",cat:"Playeras",price:299,desc:"Playera blanca con diseño SMN México.",image:"assets/playera-smn.png"},
+{id:4,name:"Gorra",cat:"Gorras",price:120,desc:"Gorra roja. Consulta disponibilidad.",image:"assets/gorra-roja.png"},
+{id:5,name:"Sudadera SMN México",cat:"Sudaderas",price:350,desc:"Sudadera blanca con diseño SMN México.",image:"assets/sudadera-producto.jpg"},
+{id:6,name:"Cinturón",cat:"Cinturones",price:100,desc:"Cinturón. Consulta detalles y disponibilidad.",image:"assets/cinturon-smn.png"},
 {id:7,name:"Porta cartilla",cat:"Porta cartillas",price:50,desc:"Porta cartilla negro con emblema S.M.N.",image:"assets/porta-cartilla.jpg"}
 ];
 let cart=JSON.parse(localStorage.getItem("uniformexCart")||"[]"),filter="Todos";

@@ -10,3 +10,5 @@
 .category{display:inline-block;color:var(--yellow);font-size:9px;font-weight:900;letter-spacing:1px;margin-bottom:7px}
 .info h3{margin-top:0}
 @media(max-width:480px){.visual{height:170px}}
+
+.visual .glyph{white-space:pre-line;font-size:17px;line-height:1.25;text-align:center;padding:12px}
