@@ -33,13 +33,13 @@ function close(){ $("drawer").classList.remove("open");$("overlay").classList.ad
 function wa(text){return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;}
 function buildWhatsAppMessage(){
  if(!cart.length)return "Hola, Uniformex. Quiero información sobre sus productos.";
- const lines=cart.map(x=>{const p=products.find(p=>p.id===x.id);return `• ${p.name} — ${x.qty} x ${money(p.price)} = ${money(p.price*x.qty)}`}).join("\\n");
+ const lines=cart.map(x=>{const p=products.find(p=>p.id===x.id);return `• ${p.name} — ${x.qty} x ${money(p.price)} = ${money(p.price*x.qty)}`}).join("\n");
  const total=cart.reduce((s,x)=>s+products.find(p=>p.id===x.id).price*x.qty,0);
- return `Hola, Uniformex. Quiero realizar este pedido:\\n\\n${lines}\\n\\nTOTAL ESTIMADO: ${money(total)}\\n\\n¿Me confirman disponibilidad y forma de entrega?`;
+ return `Hola, Uniformex. Quiero realizar este pedido:\n\n${lines}\n\nTOTAL ESTIMADO: ${money(total)}\n\n¿Me confirman disponibilidad y forma de entrega?`;
 }
 function openWhatsAppWithCart(event){
  if(event)event.preventDefault();
- window.open(wa(buildWhatsAppMessage()),"_blank","noopener");
+ window.location.href = wa(buildWhatsAppMessage());
 }
 function checkout(){
  if(!cart.length){alert("Agrega productos al carrito.");return;}
