@@ -1,72 +1,40 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Catálogo de uniformes y artículos SMN México. Consulta productos y realiza tu pedido por WhatsApp.">
-  <title>SMN México | Tienda</title>
-  <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Uniformex: artículos y prendas para tu Servicio Militar Nacional. Pedidos por WhatsApp.">
+<title>UNIFORMEX | SMN México</title><link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="topbar">SMN MÉXICO · UNIFORMES Y ARTÍCULOS</div>
-  <header class="site-header">
-    <a class="brand" href="#"><span class="brand-mark">SMN</span><span><b>SMN MÉXICO</b><small>TIENDA EN LÍNEA</small></span></a>
-    <nav><a href="#catalogo">Catálogo</a><a href="#nosotros">Información</a><a href="#contacto">Contacto</a></nav>
-    <button class="cart-button" id="openCart" aria-label="Abrir carrito">Carrito <span id="cartCount">0</span></button>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="hero-copy">
-        <p class="eyebrow">CATÁLOGO DE PRODUCTOS</p>
-        <h1>Todo lo que necesitas,<br><em>en un solo lugar.</em></h1>
-        <p>Conoce nuestros artículos y uniformes. Agrega productos a tu carrito y envía tu solicitud de pedido por WhatsApp.</p>
-        <a class="primary-button" href="#catalogo">Ver productos</a>
-        <p class="notice">Tienda independiente. No es un sitio oficial de la Secretaría de la Defensa Nacional.</p>
-      </div>
-      <div class="hero-art">
-        <div class="hero-card"><span class="hero-monogram">SMN</span><b>SMN MÉXICO</b><small>CATÁLOGO</small></div>
-        <span class="hero-stamp">PEDIDOS<br>POR WHATSAPP</span>
-      </div>
-    </section>
-
-    <section class="benefits">
-      <div><strong>01</strong><span>Consulta el catálogo</span></div>
-      <div><strong>02</strong><span>Arma tu pedido</span></div>
-      <div><strong>03</strong><span>Confirma por WhatsApp</span></div>
-    </section>
-
-    <section class="section" id="catalogo">
-      <div class="section-heading"><div><p class="eyebrow">NUESTROS ARTÍCULOS</p><h2>Catálogo</h2></div><input id="searchInput" class="search" type="search" placeholder="Buscar producto…"></div>
-      <div class="filters" id="filters">
-        <button class="filter active" data-filter="Todos">Todos</button>
-        <button class="filter" data-filter="Ropa">Ropa</button>
-        <button class="filter" data-filter="Accesorios">Accesorios</button>
-      </div>
-      <div class="product-grid" id="productGrid"></div>
-      <p class="empty hidden" id="emptyState">No encontramos productos con esa búsqueda.</p>
-    </section>
-
-    <section class="about" id="nosotros">
-      <div><p class="eyebrow">SMN MÉXICO</p><h2>Atención directa y sencilla.</h2></div>
-      <p>Explora los artículos disponibles, revisa sus detalles y envía tu solicitud. Los precios, existencias, tallas y condiciones de entrega se confirman directamente por WhatsApp antes de cerrar la compra.</p>
-    </section>
-
-    <section class="contact" id="contacto">
-      <div><p class="eyebrow">¿TIENES DUDAS?</p><h2>Estamos para atenderte.</h2><p>Escríbenos para consultar disponibilidad, tallas y formas de entrega.</p></div>
-      <a class="whatsapp-button" id="contactWhatsApp" target="_blank" rel="noopener">Contactar por WhatsApp ↗</a>
-    </section>
-  </main>
-
-  <footer><b>SMN MÉXICO</b><span>© <span id="year"></span> · Catálogo independiente</span><small>Este comercio no representa ni está afiliado oficialmente a SEDENA o al Gobierno de México.</small></footer>
-
-  <div class="overlay hidden" id="cartOverlay"></div>
-  <aside class="cart-drawer" id="cartDrawer" aria-label="Carrito de compras" aria-hidden="true">
-    <div class="drawer-head"><div><p class="eyebrow">TU SELECCIÓN</p><h2>Mi carrito</h2></div><button class="close-button" id="closeCart" aria-label="Cerrar">×</button></div>
-    <div id="cartItems" class="cart-items"></div>
-    <div class="cart-footer"><div class="total-line"><span>Total estimado</span><b id="cartTotal">$0.00</b></div><p>El precio y la disponibilidad se confirman por WhatsApp.</p><button class="primary-button full" id="checkoutButton">Enviar pedido por WhatsApp</button><button class="text-button" id="clearCart">Vaciar carrito</button></div>
-  </aside>
-
-  <script src="app.js"></script>
-</body>
-</html>
+<div class="ticker">UNIFORMEX · TODO PARA TU SMN MÉXICO · PEDIDOS POR WHATSAPP</div>
+<header class="header">
+  <a class="brand" href="#"><span class="brand-icon">U</span><span><b>UNIFORMEX</b><small>UNIFORMES SMN</small></span></a>
+  <nav><a href="#catalogo">Productos</a><a href="#nosotros">Quiénes somos</a><a href="#contacto">Contacto</a></nav>
+  <button class="cart-btn" id="openCart">CARRITO <span id="cartCount">0</span></button>
+</header>
+<main>
+<section class="hero">
+  <img src="banner-uniformex.webp" alt="Uniformex: ventas de playeras, sudaderas, gorras, cinturones, micas y artículos para realizar tu SMN">
+  <div class="hero-actions"><a href="#catalogo" class="btn yellow">VER CATÁLOGO ↓</a><a href="#" id="heroWhatsApp" class="btn green" target="_blank" rel="noopener">PEDIR POR WHATSAPP</a></div>
+</section>
+<section class="strip"><span>★ PLAYERAS</span><span>★ SUDADERAS</span><span>★ GORRAS</span><span>★ CINTURONES</span><span>★ MICAS</span><span>★ ACCESORIOS</span></section>
+<section class="catalog section" id="catalogo">
+  <div class="heading"><div><p class="eyebrow">EQUÍPATE CON UNIFORMEX</p><h1>CATÁLOGO DE <em>PRODUCTOS</em></h1><p class="sub">Encuentra lo que necesitas para tu SMN. Consulta precios, tallas y disponibilidad por WhatsApp.</p></div><input id="searchInput" type="search" placeholder="Buscar producto..."></div>
+  <div class="filters" id="filters">
+    <button class="filter active" data-filter="Todos">TODOS</button>
+    <button class="filter" data-filter="Paquetes">PAQUETES</button>
+    <button class="filter" data-filter="Playeras">PLAYERAS</button>
+    <button class="filter" data-filter="Sudaderas">SUDADERAS</button>
+    <button class="filter" data-filter="Gorras">GORRAS</button>
+    <button class="filter" data-filter="Cinturones">CINTURONES</button>
+    <button class="filter" data-filter="Porta cartillas">PORTA CARTILLAS</button>
+  </div>
+  <div class="grid" id="productGrid"></div><p id="emptyState" class="empty hidden">No hay productos que coincidan con tu búsqueda.</p>
+</section>
+<section class="how section" id="nosotros"><div><p class="eyebrow">COMPRA FÁCIL</p><h2>ARMA TU PEDIDO<br><em>EN TRES PASOS</em></h2></div><div class="steps"><article><b>01</b><h3>ELIGE</h3><p>Explora las categorías y agrega artículos a tu carrito.</p></article><article><b>02</b><h3>ENVÍA</h3><p>Manda tu selección directamente a nuestro WhatsApp.</p></article><article><b>03</b><h3>CONFIRMA</h3><p>Consulta tallas, existencias, precio final y entrega.</p></article></div></section>
+<section class="contact section" id="contacto"><div><p class="eyebrow">ATENCIÓN DIRECTA</p><h2>¿LISTO PARA TU SMN?</h2><p>Escríbenos para consultar disponibilidad y realizar tu pedido.</p></div><a id="contactWhatsApp" class="btn green" target="_blank" rel="noopener">WHATSAPP · 566 269 8251 ↗</a><div class="social">TIKTOK: <b>@Uniformex0</b></div></section>
+</main>
+<footer><b>UNIFORMEX</b><span>© <span id="year"></span> · Catálogo independiente</span><small>Marca y tienda independiente; no representa ni está afiliada oficialmente a SEDENA o al Gobierno de México.</small></footer>
+<div class="overlay hidden" id="overlay"></div><aside class="drawer" id="drawer" aria-hidden="true"><div class="drawer-head"><div><p class="eyebrow">TU SELECCIÓN</p><h2>MI CARRITO</h2></div><button id="closeCart" class="x">×</button></div><div id="cartItems" class="cart-items"></div><div class="drawer-foot"><div class="total"><span>TOTAL ESTIMADO</span><b id="cartTotal">Por confirmar</b></div><p>Precios y disponibilidad se confirman por WhatsApp.</p><button id="checkout" class="btn green wide">ENVIAR PEDIDO</button><button id="clearCart" class="clear">Vaciar carrito</button></div></aside>
+<script src="app.js"></script>
+</body></html>
