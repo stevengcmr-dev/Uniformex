@@ -32,9 +32,31 @@
   <div class="grid" id="productGrid"></div><p id="emptyState" class="empty hidden">No hay productos que coincidan con tu búsqueda.</p>
 </section>
 <section class="how section" id="nosotros"><div><p class="eyebrow">COMPRA FÁCIL</p><h2>ARMA TU PEDIDO<br><em>EN TRES PASOS</em></h2></div><div class="steps"><article><b>01</b><h3>ELIGE</h3><p>Explora las categorías y agrega artículos a tu carrito.</p></article><article><b>02</b><h3>ENVÍA</h3><p>Manda tu selección directamente a nuestro WhatsApp.</p></article><article><b>03</b><h3>CONFIRMA</h3><p>Consulta tallas, existencias, precio final y entrega.</p></article></div></section>
-<section class="contact section" id="contacto"><div><p class="eyebrow">ATENCIÓN DIRECTA</p><h2>¿LISTO PARA TU SMN?</h2><p>Escríbenos para consultar disponibilidad y realizar tu pedido.</p></div><a id="contactWhatsApp" class="btn green" target="_blank" rel="noopener">WHATSAPP · 566 269 8251 ↗</a><div class="social">TIKTOK: <b>@Uniformex0</b></div></section>
+<section class="contact section" id="contacto"><div><p class="eyebrow">ATENCIÓN DIRECTA</p><h2>¿LISTO PARA TU SMN?</h2><p>Escríbenos para consultar disponibilidad y realizar tu pedido.</p></div><div class="contact-actions"><a id="contactWhatsApp" class="btn green" target="_blank" rel="noopener">WHATSAPP · 566 269 8251 ↗</a><a class="btn tiktok" href="https://www.tiktok.com/@UniformexO" target="_blank" rel="noopener noreferrer" aria-label="Visitar TikTok de Uniformex">TIKTOK · @UniformexO ↗</a></div></section>
 </main>
 <footer><b>UNIFORMEX</b><span>© <span id="year"></span> · Catálogo independiente</span><small>Marca y tienda independiente; no representa ni está afiliada oficialmente a SEDENA o al Gobierno de México.</small></footer>
-<div class="overlay hidden" id="overlay"></div><aside class="drawer" id="drawer" aria-hidden="true"><div class="drawer-head"><div><p class="eyebrow">TU SELECCIÓN</p><h2>MI CARRITO</h2></div><button id="closeCart" class="x">×</button></div><div id="cartItems" class="cart-items"></div><div class="drawer-foot"><div class="total"><span>TOTAL ESTIMADO</span><b id="cartTotal">Por confirmar</b></div><p>Precios y disponibilidad se confirman por WhatsApp.</p><button id="checkout" class="btn green wide">ENVIAR PEDIDO</button><button id="clearCart" class="clear">Vaciar carrito</button></div></aside>
+<div class="overlay hidden" id="overlay"></div><aside class="drawer" id="drawer" aria-hidden="true"><div class="drawer-head"><div><p class="eyebrow">TU SELECCIÓN</p><h2>MI CARRITO</h2></div><button id="closeCart" class="x">×</button></div><div id="cartItems" class="cart-items"></div>
+<div class="order-location">
+  <h3>¿Desde dónde haces tu pedido?</h3>
+  <p>Indica tu estado y municipio para facilitar la cotización de entrega. Es opcional.</p>
+  <label for="orderState">Estado</label>
+  <select id="orderState">
+    <option value="">Selecciona tu estado</option>
+    <option>Aguascalientes</option><option>Baja California</option><option>Baja California Sur</option>
+    <option>Campeche</option><option>Chiapas</option><option>Chihuahua</option><option>Ciudad de México</option>
+    <option>Coahuila</option><option>Colima</option><option>Durango</option><option>Estado de México</option>
+    <option>Guanajuato</option><option>Guerrero</option><option>Hidalgo</option><option>Jalisco</option>
+    <option>Michoacán</option><option>Morelos</option><option>Nayarit</option><option>Nuevo León</option>
+    <option>Oaxaca</option><option>Puebla</option><option>Querétaro</option><option>Quintana Roo</option>
+    <option>San Luis Potosí</option><option>Sinaloa</option><option>Sonora</option><option>Tabasco</option>
+    <option>Tamaulipas</option><option>Tlaxcala</option><option>Veracruz</option><option>Yucatán</option>
+    <option>Zacatecas</option><option>Otro / No aparece</option>
+  </select>
+  <label for="orderMunicipality">Municipio o alcaldía</label>
+  <input id="orderMunicipality" type="text" maxlength="80" placeholder="Ej. Tecámac">
+  <button type="button" id="detectLocation" class="location-detect">⌖ Detectar mi ubicación</button>
+  <small id="locationStatus" aria-live="polite">Si lo prefieres, puedes escribir estos datos manualmente.</small>
+</div>
+<div class="drawer-foot"><div class="total"><span>TOTAL ESTIMADO</span><b id="cartTotal">Por confirmar</b></div><p>Precios y disponibilidad se confirman por WhatsApp.</p><button id="checkout" class="btn green wide">ENVIAR PEDIDO</button><button id="clearCart" class="clear">Vaciar carrito</button></div></aside>
 <script src="app.js"></script>
 </body></html>
