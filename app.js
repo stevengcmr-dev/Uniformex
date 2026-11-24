@@ -31,14 +31,22 @@ function add(id){let x=cart.find(x=>x.id===id);x?x.qty++:cart.push({id,qty:1});s
 function open(){ $("drawer").classList.add("open");$("overlay").classList.remove("hidden");$("drawer").setAttribute("aria-hidden","false");}
 function close(){ $("drawer").classList.remove("open");$("overlay").classList.add("hidden");$("drawer").setAttribute("aria-hidden","true");}
 function wa(text){return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;}
+function buildWhatsAppMessage(){
+ if(!cart.length)return "Hola, Uniformex. Quiero información sobre sus productos.";
+ const lines=cart.map(x=>{const p=products.find(p=>p.id===x.id);return `• ${p.name} — ${x.qty} x ${money(p.price)} = ${money(p.price*x.qty)}`}).join("\\n");
+ const total=cart.reduce((s,x)=>s+products.find(p=>p.id===x.id).price*x.qty,0);
+ return `Hola, Uniformex. Quiero realizar este pedido:\\n\\n${lines}\\n\\nTOTAL ESTIMADO: ${money(total)}\\n\\n¿Me confirman disponibilidad y forma de entrega?`;
+}
+function openWhatsAppWithCart(event){
+ if(event)event.preventDefault();
+ window.open(wa(buildWhatsAppMessage()),"_blank","noopener");
+}
 function checkout(){
  if(!cart.length){alert("Agrega productos al carrito.");return;}
- let lines=cart.map(x=>{let p=products.find(p=>p.id===x.id);return `• ${p.name} — ${x.qty} x ${money(p.price)} = ${money(p.price*x.qty)}`}).join("\n");
- let total=cart.reduce((s,x)=>s+products.find(p=>p.id===x.id).price*x.qty,0);
- window.open(wa(`Hola, Uniformex. Quiero realizar este pedido:\n\n${lines}\n\nTOTAL: ${money(total)}\n\n¿Me confirman disponibilidad y forma de entrega?`),"_blank","noopener");
+ openWhatsAppWithCart();
 }
 $("productGrid").addEventListener("click",e=>{let b=e.target.closest("[data-add]");if(b)add(+b.dataset.add);});
 $("cartItems").addEventListener("click",e=>{let a=e.target.closest("[data-inc]"),b=e.target.closest("[data-dec]");if(a){cart.find(x=>x.id===+a.dataset.inc).qty++;save();}if(b){let x=cart.find(x=>x.id===+b.dataset.dec);x.qty--;if(x.qty<1)cart=cart.filter(y=>y.id!==x.id);save();}});
 $("filters").addEventListener("click",e=>{let b=e.target.closest("[data-filter]");if(!b)return;filter=b.dataset.filter;document.querySelectorAll(".filter").forEach(x=>x.classList.toggle("active",x===b));renderProducts();});
 $("searchInput").addEventListener("input",renderProducts);$("openCart").onclick=open;$("closeCart").onclick=close;$("overlay").onclick=close;$("checkout").onclick=checkout;$("clearCart").onclick=()=>{cart=[];save();};
-$("contactWhatsApp").href=wa("Hola, Uniformex. Quiero información sobre sus productos.");$("heroWhatsApp").href=wa("Hola, Uniformex. Quiero información sobre sus paquetes SMN.");$("year").textContent=new Date().getFullYear();renderProducts();renderCart();
+$("contactWhatsApp").href=wa(buildWhatsAppMessage());$("heroWhatsApp").href=wa(buildWhatsAppMessage());$("contactWhatsApp").addEventListener("click",openWhatsAppWithCart);$("heroWhatsApp").addEventListener("click",openWhatsAppWithCart);$("year").textContent=new Date().getFullYear();renderProducts();renderCart();
